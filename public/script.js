@@ -1,16 +1,13 @@
-let shoppingNumber = 0;
+const cart = {};
+let totalItems = 0;
 
-function buttonPressedPlus(productId) {
-      if (shoppingNumber >= 0) { 
-            document.getElementById("Shop-Front-Product-Amount").innerHTML = shoppingNumber += 1;
-      }
-      console.log(shoppingNumber);
-      console.log("Product id: " + productId);
-}
-function buttonPressedMinus(productId) {
-      if (shoppingNumber > 0) {
-            document.getElementById("Shop-Front-Product-Amount").innerHTML = shoppingNumber -= 1;
-      }
-      console.log(shoppingNumber);
-      console.log("Product id: " + productId);
+function updateCart(productId, change) {
+    
+    if (!cart[productId]) cart[productId] = 0;
+
+    cart[productId] = Math.max(cart[productId] + change, 0);
+
+    totalItems = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+    
+    document.getElementById(`Shop-Front-Product-Amount-${productId}`).textContent = cart[productId];
 }

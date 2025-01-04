@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-      <link rel="stylesheet" href="style.css">
-      <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
-      <div class="Main-Banner">
-            <div class="Main-Nav">
-                  <a id="Main-Nav-Button" href="">Home</a>
-                  <a id="Main-Nav-Button" href="">Shop</a>
-                  <a id="Main-Nav-Button" href="">Footer</a>
-            </div>
-      </div>
+    <div class="Main-Banner">
+        <div class="Main-Nav">
+            <a id="Main-Nav-Button" href="">Home</a>
+            <a id="Main-Nav-Button" href="">Shop</a>
+            <a id="Main-Nav-Button" href="">Footer</a>
+        </div>
+    </div>
 
-      <div class="Shop-Front">
-            <div class="Shop-Front-Product">
-                  <a id="Shop-Front-Product-Buy" href="">Buy</a>
-                  <p id="Shop-Front-Product-Amount" data-product-id="1">0</p>
-                  <button onclick="buttonPressedPlus(1)" id="Shop-Front-Product-Change">+</button>
-                  <button onclick="buttonPressedMinus(1)" id="Shop-Front-Product-Change">-</button>
-            </div>
-            <div class="Shop-Front-Product">
-                  <a id="Shop-Front-Product-Buy" href="">Buy</a>
-                  <p id="Shop-Front-Product-Amount" data-product-id="2">0</p>
-                  <button onclick="buttonPressedPlus(2)" id="Shop-Front-Product-Change">+</button>
-                  <button onclick="buttonPressedMinus(2)" id="Shop-Front-Product-Change">-</button>
-            </div>
-            <div class="Shop-Front-Product">
-                  <a id="Shop-Front-Product-Buy" href="">Buy</a>
-                  <p id="Shop-Front-Product-Amount" data-product-id="3">0</p>
-                  <button onclick="buttonPressedPlus(3)" id="Shop-Front-Product-Change">+</button>
-                  <button onclick="buttonPressedMinus(3)" id="Shop-Front-Product-Change">-</button>
-            </div>
-      </div>
+    <div class="Shop-Front">
+        <div class="Shop-Front-Product">
+            <a id="Shop-Front-Product-Buy" href="">Buy</a>
+            <p id="Shop-Front-Product-Amount-1" data-product-id="1">0</p>
+            <button onclick="updateCart(1, 1)" id="Shop-Front-Product-Change">+</button>
+            <button onclick="updateCart(1, -1)" id="Shop-Front-Product-Change">-</button>
+        </div>
+        <div class="Shop-Front-Product">
+            <a id="Shop-Front-Product-Buy" href="">Buy</a>
+            <p id="Shop-Front-Product-Amount-2" data-product-id="2">0</p>
+            <button onclick="updateCart(2, 1)" id="Shop-Front-Product-Change">+</button>
+            <button onclick="updateCart(2, -1)" id="Shop-Front-Product-Change">-</button>
+        </div>
+        <div class="Shop-Front-Product">
+            <a id="Shop-Front-Product-Buy" href="">Buy</a>
+            <p id="Shop-Front-Product-Amount-3" data-product-id="3">0</p>
+            <button onclick="updateCart(3, 1)" id="Shop-Front-Product-Change">+</button>
+            <button onclick="updateCart(3, -1)" id="Shop-Front-Product-Change">-</button>
+        </div>
+    </div>
 </body>
 </html>
