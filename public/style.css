@@ -52,7 +52,7 @@ body {
 #Shop-Front-Product-Buy:hover {
     color: green;
 }
-#Shop-Front-Product-Amount {
+.Shop-Front-Product-Amount {
     text-align: center;
     border-radius: 10px;
     background-color: rgb(100, 100, 100);
