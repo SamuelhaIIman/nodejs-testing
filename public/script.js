@@ -39,3 +39,12 @@ function updateCart(productId, change) {
 function addToCart(productId) {
     //document.getElementById(`Quantity-${productId}`).textContent = cart[productId];
 }
+
+function cartButton() {
+    const h1 = document.getElementById("test");
+    const x = document.createTextNode("Hello");
+    h1.remove();
+    const y = document.createElement("p");
+    y.appendChild(x);
+    console.log("Hello!")
+}
