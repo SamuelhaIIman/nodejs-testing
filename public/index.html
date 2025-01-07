@@ -8,30 +8,32 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="Main-Banner">
-        <div class="Main-Nav">
-            <a class="Main-Nav-Button" id="Store" onclick="cartButton()">☰</a>
-            <a class="Main-Nav-Button" href="">Home</a>
-            <a class="Main-Nav-Button" href="">Shop</a>
-            <a class="Main-Nav-Button" href="">Footer</a>
-        </div>
+    <div class="Main-Nav">
+        <a class="Main-Nav-Button" id="Store" onclick="cartButton()">☰</a>
+        <a class="Main-Nav-Button" href="">Home</a>
+        <a class="Main-Nav-Button" href="">Shop</a>
+        <a class="Main-Nav-Button" href="">Footer</a>
     </div>
-    <h1 id="test">Hello World!</h1>
+
+    <div class="Products-Display" id="Shop-Cart">
+        
+    </div>
+
     <div class="Shop-Front">
         <img src="images/bananas.jpg" class="Shop-Front-Product" id="One">
-            <button onclick="addToCart(1)" id="Shop-Front-Product-Buy" href="">Buy</button>
+            <button onclick="addToCart(1, 'bananas.jpg')" id="Shop-Front-Product-Buy" href="">Buy</button>
             <p class="Shop-Front-Product-Amount" id="Quantity-1">0</p>
             <button onclick="updateCart(1, 1)" id="Shop-Front-Product-Change">+</button>
             <button onclick="updateCart(1, -1)" id="Shop-Front-Product-Change">-</button>
         </img>
         <img src="images/oranges.jpg" class="Shop-Front-Product" id="Two">
-            <button onclick="addToCart(2)" id="Shop-Front-Product-Buy" href="">Buy</button>
+            <button onclick="addToCart(2, 'oranges.jpg')" id="Shop-Front-Product-Buy" href="">Buy</button>
             <p class="Shop-Front-Product-Amount" id="Quantity-2">0</p>
             <button onclick="updateCart(2, 1)" id="Shop-Front-Product-Change">+</button>
             <button onclick="updateCart(2, -1)" id="Shop-Front-Product-Change">-</button>
         </img>
         <img src="images/watermelons.jpg" class="Shop-Front-Product" id="Three">
-            <button onclick="addToCart(3)" id="Shop-Front-Product-Buy" href="">Buy</button>
+            <button onclick="addToCart(3, 'watermelons.jpg')" id="Shop-Front-Product-Buy" href="">Buy</button>
             <p class="Shop-Front-Product-Amount" id="Quantity-3">0</p>
             <button onclick="updateCart(3, 1)" id="Shop-Front-Product-Change">+</button>
             <button onclick="updateCart(3, -1)" id="Shop-Front-Product-Change">-</button>

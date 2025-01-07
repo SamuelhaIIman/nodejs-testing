@@ -1,23 +1,5 @@
-// const cart = {};
-// let totalItems = 0;
-
-// function updateCart(productId, change) {
-    
-//     if (!cart[productId]) cart[productId] = 0;
-
-//     cart[productId] = Math.max(cart[productId] + change, 0);
-
-//     totalItems = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
-    
-//     document.getElementById(`Quantity-${productId}`).textContent = cart[productId];
-// }
-
-// function addToCart(productId) {
-//     document.getElementById(`Quantity-${productId}`).textContent = 0;
-//     cart[productId] = 0;
-// }
-
 const cart = {};
+const remember = [0, 0, 0];
 
 function updateCart(productId, change) {
     // I create the object
@@ -36,15 +18,19 @@ function updateCart(productId, change) {
     }
 }
 
-function addToCart(productId) {
-    //document.getElementById(`Quantity-${productId}`).textContent = cart[productId];
-}
-
-function cartButton() {
-    const h1 = document.getElementById("test");
-    const x = document.createTextNode("Hello");
-    h1.remove();
-    const y = document.createElement("p");
-    y.appendChild(x);
-    console.log("Hello!")
+function addToCart(productId, imageName) {
+    const shopCart = document.getElementById("Shop-Cart");
+    if(remember[productId-1] === 0) {
+        const image = document.createElement("img");
+        image.src = `images/${imageName}`;
+        shopCart.appendChild(image);
+        image.classList.add("New");
+        remember[productId-1] += 1;
+        
+        const para = document.createElement("p");
+        shopCart.appendChild(para);
+        para.className = "Amount-Style";
+        para.innerHTML = document.getElementById(`Quantity-${productId}`).innerHTML;
+        document.getElementById(`Quantity-${productId}`).innerHTML = 0;
+    }
 }
