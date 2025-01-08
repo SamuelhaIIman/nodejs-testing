@@ -21,12 +21,13 @@ function updateCart(productId, change) {
 function addToCart(productId, imageName) {
     const shopCart = document.getElementById("Shop-Cart");
     if(remember[productId-1] === 0) {
+        // Create an image when button pressed
         const image = document.createElement("img");
         image.src = `images/${imageName}`;
         shopCart.appendChild(image);
         image.classList.add("New");
         remember[productId-1] += 1;
-        
+        // Create a pragraph when button pressed
         const para = document.createElement("p");
         shopCart.appendChild(para);
         para.className = "Amount-Style";
