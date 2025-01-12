@@ -35,3 +35,12 @@ function addToCart(productId, imageName) {
         document.getElementById(`Quantity-${productId}`).innerHTML = 0;
     }
 }
+
+function cartButton() {
+    const menu = document.getElementById("Open-Menu");
+    const menuWindow = document.createElement("h1");
+    menu.appendChild(menuWindow);
+    menuWindow.innerHTML = "Hello world!";
+    
+    console.log("Hello world!");
+}
