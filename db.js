@@ -1,18 +1,26 @@
-const mysql = require('mysql2');
+import mysql from 'mysql2';
+import dotenv from 'dotenv';
 
-const db = mysql.createConnection({
-      host: 'localhost',
-      user: 'MySQL80', // Replace with your MySQL username
-      password: 'MimiasKolmas.824kp', // Replace with your MySQL password
-      database: 'my_cart_db'
+dotenv.config();
+
+const connection = mysql.createConnection({
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME
 });
 
-db.connect((err) => {
+connection.connect((err) => {
       if (err) {
-            console.error('Error connecting to MySQL:', err);
-      } else {
-            console.log('Connected to MySQL');
+            console.error('Error connecting to the database:', err);
+            return;
       }
+      console.log('Connected to the MySQL database.');
 });
 
-module.exports = db;
+connection.query('SELECT * FROM users', (err, results) => {
+      if (err) throw err;
+      console.log('Data from users table:', results);
+});
+
+connection.end();
