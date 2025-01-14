@@ -18,9 +18,17 @@ connection.connect((err) => {
       console.log('Connected to the MySQL database.');
 });
 
-connection.query('SELECT * FROM users', (err, results) => {
-      if (err) throw err;
-      console.log('Data from users table:', results);
-});
+// Export a query function
+export const queryDatabase = (query, params = []) => {
+      return new Promise((resolve, reject) => {
+      connection.query(query, params, (err, results) => {
+      if (err) {
+            return reject(err);
+      }
+      resolve(results);
+      });
+      });
+};
 
-connection.end();
+// Export the connection if needed for other purposes
+export default connection;
