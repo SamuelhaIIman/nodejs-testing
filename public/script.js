@@ -1,31 +1,3 @@
-import { queryDatabase } from "../db.js";
-
-const getUsers = async () => {
-    try {
-        const users = await queryDatabase('SELECT * FROM users');
-        console.log('Users from database:', users);
-    } catch (err) {
-        console.error('Error fetching users:', err);
-    }
-};
-
-// Call the function to fetch users
-getUsers();
-
-const displayUsers = async () => {
-    const users = await queryDatabase('SELECT * FROM users');
-    const userList = document.getElementById('user-list');
-    
-    users.forEach(user => {
-    const li = document.createElement('li');
-    li.textContent = `${user.name} (${user.email})`;
-    userList.appendChild(li);
-    });
-};
-
-displayUsers();
-
-
 const cart = {};
 const remember = [0, 0, 0];
 
