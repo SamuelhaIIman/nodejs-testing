@@ -24,3 +24,9 @@ connection.connect((err) => {
             console.log(result);
       })
 });
+
+function addTwo(num) {
+      return num + 2;
+}
+
+export { addTwo }; 
